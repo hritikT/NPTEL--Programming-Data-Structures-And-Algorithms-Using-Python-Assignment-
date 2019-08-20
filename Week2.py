@@ -7,8 +7,7 @@ def intreverse(n):
             reverse = (reverse * 10) + Reminder
             n = n // 10
     return reverse
-n = int(input("Please Enter any Number: "))
-print(intreverse(n))
+
 
 
 '''Write a function matched(s) that takes as input a string s and checks if the brackets "(" and ")" in s are matched: that is, every "(" has a matching ")" after it and every ")" has a matching "(" before it. Your function should ignore all other symbols that appear in s. Your function should return True if s has matched brackets and False if it does not.'''
@@ -23,8 +22,7 @@ def matched(s):
         if nesting < 0:
             return(False)
     return(nesting == 0)
-s = str(input())
-print(matched(s))
+
 
 '''Write a function sumprimes(l) that takes as input a list of integers l and retuns the sum of all the prime numbers in l.'''
 
