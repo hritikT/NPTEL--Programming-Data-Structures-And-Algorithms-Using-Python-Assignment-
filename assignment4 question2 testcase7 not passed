@@ -1,0 +1,71 @@
+def maxf(l):
+    count_max=0
+    max=[]   
+    a=len(l)
+    for i in range(0,a):
+        count=0 
+        check=l[i]
+        
+        for j in range(i,a):
+            if check==l[j]:
+                count=count+1
+                
+        if count>count_max:
+            max[0:len(max)]=[check]
+            count_max=count
+        elif count==count_max:
+            max.append(check)          
+                
+    max.sort()                  
+    return(max)
+    
+def minf(l):
+    count_min=100
+    min=[]
+    a=len(l)
+    for i in range(0,a):
+        count=0 
+        check=l[i]       
+        for j in range(0,a):
+            if check==l[j]:
+                count=count+1               
+                
+        if count<count_min:
+            min[0:len(min)]=[check]
+            count_min=count
+        elif count==count_min:
+            if check not in min:
+                
+               min.append(check)
+    min.sort()
+    return(min)
+    
+    
+        
+def frequency(l):
+    
+    return(minf(l),maxf(l))
+  
+def onehop(l):
+    
+    c=[]
+    new=[]
+    for i in range(0,len(l)):
+        a=l[i]
+        
+        
+        
+        for j in range(0,len(l)):
+            b=l[j]
+            if a[1]==b[0]:
+                c.extend([a[0],b[1]])
+                if c[0]!=c[1]:
+                    c=tuple(c)
+                    if c not in new:
+                      
+                      new.append(c)
+                    
+                c=[]                    
+                   
+                            
+    return(new) 
